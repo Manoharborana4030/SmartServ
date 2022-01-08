@@ -1,0 +1,81 @@
+<html lang="en">
+
+<head>
+	 <link rel="stylesheet" href="Task1.css">
+	<meta charset="UTF-8">
+	<title>SMARTSERV</title>
+	<script src="https://code.jquery.com/jquery-3.5.1.js">
+	</script>
+	
+</head>
+
+<body>
+	<section>
+		<h1>SMARTSERV</h1>
+
+		<table id='table'>
+			
+			<tr>
+				
+				
+				<th>Title</th>
+				<th>Price</th>
+				<th>popularity</th>
+			</tr>
+
+			<script>
+				$(document).ready(function () {
+
+					
+					$.getJSON("https://s3.amazonaws.com/open-to-cors/assignment.json",
+							function (data) 
+						{
+							
+						var student = '';
+						var i=0;
+						console.log("data");
+						console.log(typeof data);
+						console.log(data.products);
+						
+						var arr=[];
+						$.each(data.products, function (key, value) 
+						{	
+							arr.push(value);
+						});
+						
+						arr.sort(function(a, b){
+   							return b.popularity - a.popularity;
+						});
+
+						
+						
+						$.each(arr, function (key, value) 
+						{
+							console.log("Data 2");
+							console.log(value);
+							console.log(typeof value);
+							
+							student += '<tr>';
+				
+							student += '<td>' +
+								value.title+ '</td>';
+
+							student += '<td>' +
+								value.price + '</td>';
+
+							student += '<td>' +
+								value.popularity + '</td>';
+
+							student += '</tr>';
+
+							i++;
+						});
+						
+						$('#table').append(student);
+					});
+				});
+			</script>
+	</section>
+</body>
+
+</html>
