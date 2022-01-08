@@ -11,6 +11,10 @@ app.get('/task1',function(req,res)
 	res.sendFile(__dirname+'/public/task1.html');
 });
 
+app.get('/task3',function(req,res)
+{
+	res.sendFile(__dirname+'/public/task3.html');
+});
 
 app.listen(PORT,function()
 {
