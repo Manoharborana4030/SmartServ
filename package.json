@@ -2,9 +2,10 @@
   "name": "smartserv",
   "version": "1.0.0",
   "description": "This is the assignment for smartserv",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Manoharborana4030/SmartServ/issues"
   },
-  "homepage": "https://github.com/Manoharborana4030/SmartServ#readme"
+  "homepage": "https://github.com/Manoharborana4030/SmartServ#readme",
+  "dependencies": {
+    "express": "^3.15.0"
+  }
 }
